@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomepageController.swift
 //  Hang
 //
 //  Created by Dominic Egginton on 18/11/2019.
@@ -8,13 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class HomepageController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
 

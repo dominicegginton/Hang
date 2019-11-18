@@ -16,6 +16,8 @@
 		F23AB4C223829B53002990BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F23AB4C023829B53002990BF /* LaunchScreen.storyboard */; };
 		F23AB4CD23829B53002990BF /* HangTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23AB4CC23829B53002990BF /* HangTests.swift */; };
 		F23AB4D823829B53002990BF /* HangUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23AB4D723829B53002990BF /* HangUITests.swift */; };
+		F23AB4E62382A0BA002990BF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F23AB4E52382A0BA002990BF /* README.md */; };
+		F23AB4E82382A0CB002990BF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F23AB4E72382A0CB002990BF /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		F23AB4D323829B53002990BF /* HangUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HangUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F23AB4D723829B53002990BF /* HangUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangUITests.swift; sourceTree = "<group>"; };
 		F23AB4D923829B53002990BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F23AB4E52382A0BA002990BF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F23AB4E72382A0CB002990BF /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 		F23AB4A623829B50002990BF = {
 			isa = PBXGroup;
 			children = (
+				F23AB4E72382A0CB002990BF /* .gitignore */,
+				F23AB4E52382A0BA002990BF /* README.md */,
 				F23AB4B123829B50002990BF /* Hang */,
 				F23AB4CB23829B53002990BF /* HangTests */,
 				F23AB4D623829B53002990BF /* HangUITests */,
@@ -101,6 +107,9 @@
 		F23AB4B123829B50002990BF /* Hang */ = {
 			isa = PBXGroup;
 			children = (
+				F23AB4EB2382A0F5002990BF /* Models */,
+				F23AB4EA2382A0F0002990BF /* Views */,
+				F23AB4E92382A0DC002990BF /* View Controllers */,
 				F23AB4B223829B50002990BF /* AppDelegate.swift */,
 				F23AB4B423829B50002990BF /* SceneDelegate.swift */,
 				F23AB4B623829B50002990BF /* ViewController.swift */,
@@ -129,6 +138,27 @@
 				F23AB4D923829B53002990BF /* Info.plist */,
 			);
 			path = HangUITests;
+			sourceTree = "<group>";
+		};
+		F23AB4E92382A0DC002990BF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F23AB4EA2382A0F0002990BF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F23AB4EB2382A0F5002990BF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,8 +265,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F23AB4E82382A0CB002990BF /* .gitignore in Resources */,
 				F23AB4C223829B53002990BF /* LaunchScreen.storyboard in Resources */,
 				F23AB4BF23829B53002990BF /* Assets.xcassets in Resources */,
+				F23AB4E62382A0BA002990BF /* README.md in Resources */,
 				F23AB4BA23829B50002990BF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

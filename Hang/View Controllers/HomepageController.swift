@@ -19,6 +19,10 @@ class HomepageController: UIViewController {
         sessionTableView.delegate = self
         sessionTableView.dataSource = self
     }
+    
+    @IBAction func addBtnClicked(_ sender: Any) {
+        print("addBtnClicked")
+    }
 }
 
 extension HomepageController: UITableViewDelegate, UITableViewDataSource {

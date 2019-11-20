@@ -18,6 +18,7 @@
 		F23AB4E62382A0BA002990BF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F23AB4E52382A0BA002990BF /* README.md */; };
 		F23AB4E82382A0CB002990BF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F23AB4E72382A0CB002990BF /* .gitignore */; };
 		F23AB4ED2382A95C002990BF /* HomepageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23AB4EC2382A95C002990BF /* HomepageController.swift */; };
+		F29F335223853D0000B28848 /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29F335123853D0000B28848 /* Sessions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		F23AB4E52382A0BA002990BF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F23AB4E72382A0CB002990BF /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		F23AB4EC2382A95C002990BF /* HomepageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageController.swift; sourceTree = "<group>"; };
+		F29F335123853D0000B28848 /* Sessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 		F23AB4EB2382A0F5002990BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F29F335123853D0000B28848 /* Sessions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F29F335223853D0000B28848 /* Sessions.swift in Sources */,
 				F23AB4B323829B50002990BF /* AppDelegate.swift in Sources */,
 				F23AB4ED2382A95C002990BF /* HomepageController.swift in Sources */,
 				F23AB4B523829B50002990BF /* SceneDelegate.swift in Sources */,

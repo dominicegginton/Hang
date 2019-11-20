@@ -29,7 +29,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Hang" id="dVE-9v-ZGo"/>
+                    <navigationItem key="navigationItem" title="Hang" id="dVE-9v-ZGo">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ncT-Nm-NgB"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="sessionTableView" destination="eNr-x6-apK" id="ak4-xQ-2FK"/>
                     </connections>

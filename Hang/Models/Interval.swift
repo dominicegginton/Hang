@@ -8,13 +8,6 @@
 
 import Foundation
 
-enum Activty {
-    case hang
-    case rest
-}
-
 struct Interval {
-    var activty: Activty
     var duration: Int
-    var weight: Int
 }

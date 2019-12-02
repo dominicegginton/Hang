@@ -10,7 +10,14 @@ import Foundation
 
 struct Session {
     var name: String
-    var activies: [Activty]
+    var intervals: [Interval]
+    var totalDuration: Int {
+        var duration: Int = 0
+        for interval in self.intervals {
+            duration += interval.duration
+        }
+        return duration
+    }
 }
 
 class Sessions {

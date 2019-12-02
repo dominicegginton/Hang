@@ -9,7 +9,8 @@
 import Foundation
 
 struct Session {
-    
+    var name: String
+    var activies: [Activty]
 }
 
 class Sessions {

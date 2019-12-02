@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct Interval {
+    var activty: Activty
+    var duration: Int
+    var weight: Int
+}

@@ -17,7 +17,10 @@ class SessionTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        // UI Setup
+        self.totalDurationLabel.layer.masksToBounds = true
+        self.totalDurationLabel.layer.cornerRadius = 5
         if let session = self.session {
             self.nameLabel.text = session.name
             self.totalDurationLabel.text = "\(session.totalDuration)"

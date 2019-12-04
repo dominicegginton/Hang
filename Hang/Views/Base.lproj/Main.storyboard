@@ -92,11 +92,18 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="New Session" id="oYR-S8-Ib3">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="HBp-Xg-tw8">
-                            <connections>
-                                <action selector="dismissKeybaord:" destination="vlk-gB-Tgh" id="rZV-7c-eCy"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Done" id="HBp-Xg-tw8">
+                                <connections>
+                                    <action selector="dismissKeybaord:" destination="vlk-gB-Tgh" id="rZV-7c-eCy"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Edit" image="rectangle.compress.vertical" catalog="system" id="cgk-CP-BsB">
+                                <connections>
+                                    <action selector="reOrderIntervalsBtnClick:" destination="vlk-gB-Tgh" id="fss-dp-IIn"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -329,5 +336,6 @@
     </scenes>
     <resources>
         <image name="plus" catalog="system" width="64" height="56"/>
+        <image name="rectangle.compress.vertical" catalog="system" width="64" height="64"/>
     </resources>
 </document>

@@ -12,7 +12,7 @@ protocol UpdateSessionDelagate {
     func updateSession(with note: Session, at index: Int)
 }
 
-class SessionViewController: UIViewController, UITextFieldDelegate, UpdateIntervalDelagate{
+class SessionViewController: UIViewController, UITextFieldDelegate, UpdateIntervalDelagate {
     
     // Update Session Delegate
     var updateSessionDelegate: UpdateSessionDelagate?
@@ -28,13 +28,22 @@ class SessionViewController: UIViewController, UITextFieldDelegate, UpdateInterv
     public var sessionId: Int?
     
     // Intervals
-    public var intervals: [Interval]?
+    public var intervals: [Interval] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let id: Int = sessionId {
+            if let session: Session = try? Sessions.instance.getSession(atIndex: id) {
+                self.intervals = session.intervals
+                self.title = session.name
+                self.sessionNameTxtBox.text = session.name
+                self.sessionTotalDurationLbl.text = "\(session.totalDuration)"
+            }
+        }
+        
         // Setup UI
-        self.doneBtn.tintColor = UIColor.clear
+        self.doneBtn.isEnabled = false
         self.sessionNameTxtBox.delegate = self
         self.sessionTotalDurationLbl.layer.masksToBounds = true
         self.sessionTotalDurationLbl.layer.cornerRadius = 5
@@ -42,17 +51,11 @@ class SessionViewController: UIViewController, UITextFieldDelegate, UpdateInterv
         // Interval Table View Delegates
         self.intervalTableView.delegate = self
         self.intervalTableView.dataSource = self
+        self.intervalTableView.reloadData()
         
         // Notification Observers for keyabord show and hide
         NotificationCenter.default.addObserver(self, selector: #selector(keybaordWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keybaordWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        if let id: Int = sessionId {
-            if let session: Session = try? Sessions.instance.getSession(atIndex: id) {
-                self.intervals = session.intervals
-            }
-        }
-        // self.intervals!.append(Interval(action: .hang, duration: 5))
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -66,7 +69,7 @@ class SessionViewController: UIViewController, UITextFieldDelegate, UpdateInterv
     // MARK: - Save Session
     func saveSession() {
         var sessionName = self.sessionNameTxtBox.text ?? "New Session"
-        let sessionIntervals = self.intervals ?? []
+        let sessionIntervals = self.intervals
         if sessionName == "" {
             sessionName = "New Session"
         }
@@ -84,11 +87,11 @@ class SessionViewController: UIViewController, UITextFieldDelegate, UpdateInterv
     
     @objc func keybaordWillShow(_ notification: NSNotification) {
         print("showing keybaord")
-        self.doneBtn.tintColor = nil
+        self.doneBtn.isEnabled = !self.doneBtn.isEnabled
     }
     
     @objc func keybaordWillHide(_ notification: NSNotification) {
-        self.doneBtn.tintColor = UIColor.clear
+        self.doneBtn.isEnabled = !self.doneBtn.isEnabled
     }
     
     @IBAction func dismissKeybaord(_ sender: UIBarButtonItem) {
@@ -97,19 +100,25 @@ class SessionViewController: UIViewController, UITextFieldDelegate, UpdateInterv
     
     // MARK: - Add Interval
     @IBAction func addInterval(_ sender: Any) {
-        self.intervals?.append(Interval(action: .hang, duration: 0))
+        self.intervals.append(Interval(action: .hang, duration: 0))
         self.intervalTableView.reloadData()
-        let indexPath = IndexPath(row: self.intervals!.count - 1, section: 0)
+        let indexPath = IndexPath(row: self.intervals.count - 1, section: 0)
         self.intervalTableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         performSegue(withIdentifier: "intervalDetails", sender: self)
     }
     
     // MARK: - Update Interval
     func updateInterval(with interval: Interval, at index: Int) {
-        self.intervals![index] = interval
+        self.intervals[index] = interval
         self.intervalTableView.reloadData()
+        self.saveSession()
     }
-
+    
+    // MARK: - Reorder Button
+    @IBAction func reOrderIntervalsBtnClick(_ sender: Any) {
+        self.intervalTableView.isEditing = !self.intervalTableView.isEditing
+    }
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -120,7 +129,7 @@ class SessionViewController: UIViewController, UITextFieldDelegate, UpdateInterv
                 if let intervalViewController = segue.destination as? IntervalViewController {
                     print("Interval Details controller found")
                     intervalViewController.intervalId = indexPath.row
-                    intervalViewController.interval = self.intervals?[indexPath.row]
+                    intervalViewController.interval = self.intervals[indexPath.row]
                     intervalViewController.updateIntervalDelagate = self
                 }
             }
@@ -132,13 +141,13 @@ class SessionViewController: UIViewController, UITextFieldDelegate, UpdateInterv
 extension SessionViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.intervals!.count
+        return self.intervals.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("IntervalTableViewCell", owner: self, options: nil)?.first as! IntervalTableViewCell
         // Configure the cell...
-        let interval = self.intervals![indexPath.row]
+        let interval = self.intervals[indexPath.row]
         cell.configureCell(interval: interval)
         return cell
     }
@@ -146,8 +155,8 @@ extension SessionViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAtion = UIContextualAction(style: .normal, title: "Delete", handler: { (action: UIContextualAction, view: UIView, success :(Bool) -> Void) in
             print("delete \(indexPath)")
-            self.intervals?.remove(at: indexPath.row)
-            self.intervalTableView.reloadData()
+            self.intervals.remove(at: indexPath.row)
+            self.intervalTableView.deleteRows(at: [indexPath], with: .automatic)
         })
         deleteAtion.backgroundColor = UIColor.systemRed
         return UISwipeActionsConfiguration(actions: [deleteAtion])
@@ -155,6 +164,21 @@ extension SessionViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "intervalDetails", sender: self)
+    }
+    
+    // MARK: - Reorder TableView
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let moveInterval = self.intervals[sourceIndexPath.row]
+        self.intervals.remove(at: sourceIndexPath.row)
+        self.intervals.insert(moveInterval, at: destinationIndexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
+
+    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
     }
     
 }

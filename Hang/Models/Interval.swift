@@ -8,6 +8,12 @@
 
 import Foundation
 
+enum Action: String, CaseIterable {
+    case hang = "Hang"
+    case rest = "Rest"
+}
+
 struct Interval {
+    var action: Action?
     var duration: Int
 }

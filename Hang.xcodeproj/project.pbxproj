@@ -20,6 +20,7 @@
 		F23AB4ED2382A95C002990BF /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23AB4EC2382A95C002990BF /* HomepageViewController.swift */; };
 		F2560AFE239516EC00485157 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2560AFD239516EC00485157 /* SessionViewController.swift */; };
 		F2560B002395231000485157 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2560AFF2395231000485157 /* Interval.swift */; };
+		F2889BEE23971FB6001DF789 /* IntervalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2889BED23971FB6001DF789 /* IntervalViewController.swift */; };
 		F29412F72395C448003F2298 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29412F62395C448003F2298 /* TimerViewController.swift */; };
 		F29412FC2395D345003F2298 /* IntervalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29412FA2395D345003F2298 /* IntervalTableViewCell.swift */; };
 		F29412FD2395D345003F2298 /* IntervalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F29412FB2395D345003F2298 /* IntervalTableViewCell.xib */; };
@@ -65,6 +66,7 @@
 		F23AB4EC2382A95C002990BF /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		F2560AFD239516EC00485157 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
 		F2560AFF2395231000485157 /* Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
+		F2889BED23971FB6001DF789 /* IntervalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalViewController.swift; sourceTree = "<group>"; };
 		F29412F62395C448003F2298 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		F29412FA2395D345003F2298 /* IntervalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTableViewCell.swift; sourceTree = "<group>"; };
 		F29412FB2395D345003F2298 /* IntervalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntervalTableViewCell.xib; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				F29412F62395C448003F2298 /* TimerViewController.swift */,
 				F29F33572385596E00B28848 /* SessionTableViewCell.swift */,
 				F29412FA2395D345003F2298 /* IntervalTableViewCell.swift */,
+				F2889BED23971FB6001DF789 /* IntervalViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2560AFE239516EC00485157 /* SessionViewController.swift in Sources */,
+				F2889BEE23971FB6001DF789 /* IntervalViewController.swift in Sources */,
 				F29F33592385596E00B28848 /* SessionTableViewCell.swift in Sources */,
 				F29412FC2395D345003F2298 /* IntervalTableViewCell.swift in Sources */,
 				F29412F72395C448003F2298 /* TimerViewController.swift in Sources */,

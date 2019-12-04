@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "0Py-Rn-l3V"; */
+"0Py-Rn-l3V.text" = "Name";
+
+/* Class = "UILabel"; text = "Intervals"; ObjectID = "7Jz-ZE-Vvd"; */
+"7Jz-ZE-Vvd.text" = "Intervals";
+
+/* Class = "UIViewController"; title = "Hompage"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "Hompage";
+
+/* Class = "UIBarButtonItem"; title = "Start"; ObjectID = "Hiq-ge-X9l"; */
+"Hiq-ge-X9l.title" = "Start";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "R1o-aA-OLx"; */
+"R1o-aA-OLx.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Hang"; ObjectID = "dVE-9v-ZGo"; */
+"dVE-9v-ZGo.title" = "Hang";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "ifi-Od-Gll"; */
+"ifi-Od-Gll.placeholder" = "Name";
+
+/* Class = "UINavigationItem"; title = "New Session"; ObjectID = "oYR-S8-Ib3"; */
+"oYR-S8-Ib3.title" = "New Session";
+
+/* Class = "UINavigationItem"; title = "Session Name"; ObjectID = "uAR-li-jjo"; */
+"uAR-li-jjo.title" = "Session Name";
+
+/* Class = "UILabel"; text = "00:00"; ObjectID = "yX0-YH-Gtc"; */
+"yX0-YH-Gtc.text" = "00:00";

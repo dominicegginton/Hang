@@ -14,18 +14,18 @@ class HomepageViewController: UIViewController, UpdateSessionDelagate {
     // UI Outlets
     @IBOutlet weak var sessionTableView: UITableView!
     
+    var sessionTableViewSelection: IndexPath?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Setup sessionTableView
         sessionTableView.delegate = self
         sessionTableView.dataSource = self
-        Sessions.instance.add(session: Session(name: "Testing", intervals: [Interval(action: .hang, duration: 5)]))
-        Sessions.instance.add(session: Session(name: "Testing2", intervals: []))
     }
     
     @IBAction func newSession(_ sender: Any) {
-        let newSession = Session(name: "New Session", intervals: [Interval(action: .hang, duration: 5)])
+        let newSession = Session(name: "New Session", intervals: [])
         Sessions.instance.add(session: newSession)
         self.sessionTableView.reloadData()
         let indexPath = IndexPath(row: Sessions.instance.count - 1, section: 0)
@@ -49,6 +49,13 @@ class HomepageViewController: UIViewController, UpdateSessionDelagate {
         } else if segue.identifier == "sessionDetails" {
             if let indexPath = self.sessionTableView.indexPathForSelectedRow {
                 print("found row \(indexPath.row)")
+                if let sessionViewController = segue.destination as? SessionViewController {
+                    print("Session Details controller found")
+                    sessionViewController.sessionId = indexPath.row
+                    sessionViewController.updateSessionDelegate = self
+                }
+            } else if let indexPath = self.sessionTableViewSelection {
+                print("found row \(indexPath.row) with sessionTableViewSelection")
                 if let sessionViewController = segue.destination as? SessionViewController {
                     print("Session Details controller found")
                     sessionViewController.sessionId = indexPath.row
@@ -84,6 +91,32 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
             print("Error loading session")
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let editAction = UIContextualAction(style: .normal, title: "Edit", handler: { (action: UIContextualAction, view: UIView, success: (Bool) -> Void) in
+            self.sessionTableViewSelection = indexPath
+            self.performSegue(withIdentifier: "sessionDetails", sender: self)
+            success(true)
+        })
+        editAction.backgroundColor = UIColor.systemIndigo
+        return UISwipeActionsConfiguration(actions: [editAction])
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAtion = UIContextualAction(style: .destructive, title: "Delete", handler: { (action: UIContextualAction, view: UIView, success :(Bool) -> Void) in
+            print("delete \(indexPath)")
+            do {
+                try Sessions.instance.remove(atIndex: indexPath.row)
+                self.sessionTableView.deleteRows(at: [indexPath], with: .automatic)
+            } catch {
+                print(">>> error deleting session")
+                success(false)
+            }
+            success(true)
+        })
+        deleteAtion.backgroundColor = UIColor.systemRed
+        return UISwipeActionsConfiguration(actions: [deleteAtion])
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

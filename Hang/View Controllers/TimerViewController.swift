@@ -16,6 +16,7 @@ class TimerViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.title = try? Sessions.instance.getSession(atIndex: self.sessionId!).name
     }
     
 

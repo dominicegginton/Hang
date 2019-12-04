@@ -87,9 +87,8 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
+        self.performSegue(withIdentifier: "sessionTimer", sender: self)
     }
-    
     
 }
 

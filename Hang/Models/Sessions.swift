@@ -1,0 +1,75 @@
+//
+//  Sessions.swift
+//  Hang
+//
+//  Created by Dominic Egginton on 20/11/2019.
+//  Copyright © 2019 Dominic Egginton. All rights reserved.
+//
+
+import Foundation
+
+struct Session {
+    var name: String
+    var intervals: [Interval]
+    var totalDuration: Int {
+        var duration: Int = 0
+        for interval in self.intervals {
+            duration += interval.duration
+        }
+        return duration
+    }
+}
+
+class Sessions {
+    
+    var sessions: [Session]
+    public static let instance = Sessions()
+    
+    init() {
+        self.sessions = []
+    }
+    
+    public var count: Int {
+        return self.sessions.count
+    }
+    
+    public func add(session: Session) {
+        self.sessions.append(session)
+    }
+    
+    public func getSession(atIndex index: Int) throws -> Session {
+        if self.sessions.indices.contains(index) {
+            return self.sessions[index]
+        } else {
+            throw SessionsError.outOfRange(index)
+        }
+    }
+    
+    public func insert(session newSession: Session, atIndex index: Int) throws {
+        if self.sessions.indices.contains(index) || self.count == index {
+            self.sessions.insert(newSession, at: index)
+        } else {
+            throw SessionsError.outOfRange(index)
+        }
+    }
+    
+    public func update(session updatedSession: Session, atIndex index: Int) throws {
+        if self.sessions.indices.contains(index) {
+            self.sessions[index] = updatedSession
+        } else {
+            throw SessionsError.outOfRange(index)
+        }
+    }
+    
+    public func remove(atIndex index: Int) throws {
+        if self.sessions.indices.contains(index) {
+            self.sessions.remove(at: index)
+        } else {
+            throw SessionsError.outOfRange(index)
+        }
+    }
+    
+    enum SessionsError: Error {
+        case outOfRange(_ index: Int)
+    }
+}

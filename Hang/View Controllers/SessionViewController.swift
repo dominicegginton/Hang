@@ -109,36 +109,6 @@ class SessionViewController: UIViewController, UITextFieldDelegate, UpdateInterv
         self.intervals![index] = interval
         self.intervalTableView.reloadData()
     }
-    
-    // MARK: - Edit Table
-        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-            if editingStyle == .delete {
-                // Delete the row from the data source
-    //            do {
-    //                try Notes.sharedInstance.remove(at: indexPath.row)
-    //            } catch {
-    //                print("error delting note")
-    //            }
-                tableView.deleteRows(at: [indexPath], with: .fade)
-            }
-        }
-        
-        func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-            
-                print(">>> index \(fromIndexPath.row) >>> to index \(to.row)")
-
-        }
-        
-        func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-            // Return false if you do not want the item to be re-orderable.
-            return true
-        }
-        
-        func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-            // Return false if you do not want the specified item to be editable.
-            return true
-        }
-    
 
     // MARK: - Navigation
     
@@ -168,10 +138,17 @@ extension SessionViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("IntervalTableViewCell", owner: self, options: nil)?.first as! IntervalTableViewCell
         // Configure the cell...
-        let i = self.intervals![indexPath.row]
-        print("xxxxxx \(i)")
-        cell.configureCell(interval: i)
+        let interval = self.intervals![indexPath.row]
+        cell.configureCell(interval: interval)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAtion = UIContextualAction(style: .normal, title: "Delete", handler: { (action: UIContextualAction, view: UIView, success :(Bool) -> Void) in
+            print("delete \(indexPath)")
+        })
+        deleteAtion.backgroundColor = UIColor.systemRed
+        return UISwipeActionsConfiguration(actions: [deleteAtion])
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

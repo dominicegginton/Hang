@@ -30,7 +30,7 @@ class IntervalTableViewCell: UITableViewCell {
     }
     
     public func configureCell(interval: Interval) {
-        self.actionLbl.text = "\(String(describing: interval.action))"
+        self.actionLbl.text = "\(interval.action?.rawValue ?? "")"
         self.durationLbl.text = "\(interval.duration)"
     }
     

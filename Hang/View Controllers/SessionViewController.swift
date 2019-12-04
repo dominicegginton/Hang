@@ -146,6 +146,8 @@ extension SessionViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAtion = UIContextualAction(style: .normal, title: "Delete", handler: { (action: UIContextualAction, view: UIView, success :(Bool) -> Void) in
             print("delete \(indexPath)")
+            self.intervals?.remove(at: indexPath.row)
+            self.intervalTableView.reloadData()
         })
         deleteAtion.backgroundColor = UIColor.systemRed
         return UISwipeActionsConfiguration(actions: [deleteAtion])

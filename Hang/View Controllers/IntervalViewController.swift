@@ -15,9 +15,9 @@ protocol UpdateIntervalDelagate {
 class IntervalViewController: UIViewController {
     
     // UI Outlets
-    @IBOutlet weak var durationLbl: UILabel!
     @IBOutlet weak var actionTableView: UITableView!
-    @IBOutlet weak var durationTxtBox: UITextField!
+    @IBOutlet weak var durationStepper: UIStepper!
+    @IBOutlet weak var durationLbl: UILabel!
     
     // Update Interval Delegate
     public var updateIntervalDelagate: UpdateIntervalDelagate?
@@ -27,7 +27,7 @@ class IntervalViewController: UIViewController {
     public var interval: Interval?
     
     // Selected Action
-    var selectedAction: Action?
+    var selectedAction: Action = .hang
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,15 +37,10 @@ class IntervalViewController: UIViewController {
         self.actionTableView.dataSource = self
 
         // Seup UI
-        self.durationLbl.layer.masksToBounds = true
-        self.durationLbl.layer.cornerRadius = 5
         self.actionTableView.alwaysBounceVertical = false
-        
-        if intervalId != nil {
-            if let interval = self.interval {
-                self.durationTxtBox.text = "\(interval.duration)"
-            }
-        }
+        self.durationStepper.autorepeat = true
+        self.durationStepper.value = 0
+        self.durationStepper.maximumValue = 900
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -56,10 +51,15 @@ class IntervalViewController: UIViewController {
         }
     }
     
+    @IBAction func stepperClicked(_ sender: UIStepper) {
+        let interval: Interval = Interval(action: self.selectedAction, duration: Int(sender.value))
+        self.durationLbl.text = interval.time
+    }
+    
+    
     // MARK: - Save Interval
     func saveInterval() {
-        let duration: Int = Int(self.durationTxtBox.text!) ?? 0
-        
+        let duration: Int = Int(self.durationStepper.value)
         let interval: Interval = Interval(action: self.selectedAction, duration: duration)
         if let id = self.intervalId {
             self.updateIntervalDelagate?.updateInterval(with: interval, at: id)
@@ -77,21 +77,29 @@ extension IntervalViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = self.actionTableView.dequeueReusableCell(withIdentifier: "actionCell", for: indexPath)
         cell.textLabel?.text = Action.allCases[indexPath.row].rawValue
         self.actionTableView.heightAnchor.constraint(equalToConstant: self.actionTableView.contentSize.height).isActive = true
+        cell.selectionStyle = .none
+        cell.backgroundColor = .secondarySystemBackground
+        if indexPath.row == 0 && indexPath.section == 0 {
+            cell.backgroundColor = UIColor.systemGreen
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         for selection in 0..<self.actionTableView.numberOfSections {
             for row in 0..<self.actionTableView.numberOfRows(inSection: selection) {
-                let cell = self.actionTableView.cellForRow(at: IndexPath(row: row, section: selection))
-                cell!.accessoryType = .none
-                cell?.selectionStyle = .none
+                if let cell = self.actionTableView.cellForRow(at: IndexPath(row: row, section: selection)) {
+                    cell.selectionStyle = .none
+                    cell.backgroundColor = .secondarySystemBackground
+                }
             }
         }
-        let actionCell = self.actionTableView.cellForRow(at: indexPath)
-        actionCell?.accessoryType = .checkmark
-        self.selectedAction = Action(rawValue: (actionCell?.textLabel!.text)!)
-        self.title = actionCell?.textLabel!.text
+        if let actionCell = self.actionTableView.cellForRow(at: indexPath) {
+            if let action = Action(rawValue: (actionCell.textLabel!.text!)) {
+                actionCell.backgroundColor = action.color
+                self.selectedAction = action
+            }
+        }
     }
     
 }

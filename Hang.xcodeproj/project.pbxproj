@@ -24,6 +24,7 @@
 		F29412F72395C448003F2298 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29412F62395C448003F2298 /* TimerViewController.swift */; };
 		F29412FC2395D345003F2298 /* IntervalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29412FA2395D345003F2298 /* IntervalTableViewCell.swift */; };
 		F29412FD2395D345003F2298 /* IntervalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F29412FB2395D345003F2298 /* IntervalTableViewCell.xib */; };
+		F29BF57F2399ACA1007EB17C /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29BF57E2399ACA1007EB17C /* Time.swift */; };
 		F29F335223853D0000B28848 /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29F335123853D0000B28848 /* Sessions.swift */; };
 		F29F33592385596E00B28848 /* SessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29F33572385596E00B28848 /* SessionTableViewCell.swift */; };
 		F29F335A2385596E00B28848 /* SessionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F29F33582385596E00B28848 /* SessionTableViewCell.xib */; };
@@ -70,6 +71,7 @@
 		F29412F62395C448003F2298 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		F29412FA2395D345003F2298 /* IntervalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTableViewCell.swift; sourceTree = "<group>"; };
 		F29412FB2395D345003F2298 /* IntervalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntervalTableViewCell.xib; sourceTree = "<group>"; };
+		F29BF57E2399ACA1007EB17C /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		F29F335123853D0000B28848 /* Sessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessions.swift; sourceTree = "<group>"; };
 		F29F33572385596E00B28848 /* SessionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTableViewCell.swift; sourceTree = "<group>"; };
 		F29F33582385596E00B28848 /* SessionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionTableViewCell.xib; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			children = (
 				F29F335123853D0000B28848 /* Sessions.swift */,
 				F2560AFF2395231000485157 /* Interval.swift */,
+				F29BF57E2399ACA1007EB17C /* Time.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F29BF57F2399ACA1007EB17C /* Time.swift in Sources */,
 				F2560AFE239516EC00485157 /* SessionViewController.swift in Sources */,
 				F2889BEE23971FB6001DF789 /* IntervalViewController.swift in Sources */,
 				F29F33592385596E00B28848 /* SessionTableViewCell.swift in Sources */,

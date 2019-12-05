@@ -71,7 +71,7 @@ class TimerViewController: UIViewController {
             self.readyTick -= 1
         } else {
             if self.intervalTick > 0 {
-                self.messageLbl.text = "\(self.currentInterval?.action?.rawValue ?? "")"
+                self.messageLbl.text = "\(self.currentInterval!.action.rawValue)"
                 self.title = "\(self.intervalTick)"
                 let progressTick = self.currentInterval!.duration - (self.intervalTick - 1)
                 let progress: Float = Float(progressTick) / Float(self.currentInterval!.duration)
@@ -86,7 +86,7 @@ class TimerViewController: UIViewController {
                     self.intervals.remove(at: 0)
                     self.intervalTableView.deleteRows(at: [IndexPath(row: 0, section: 0)], with: .top)
                     self.title = "\(self.intervalTick)"
-                    self.messageLbl.text = "\(self.currentInterval?.action?.rawValue ?? "")"
+                    self.messageLbl.text = "\(self.currentInterval!.action.rawValue)"
                     self.intervalTick -= 1
                     let progress: Float = Float(1) / Float(self.currentInterval!.duration)
                     self.progressBar.setProgress(progress, animated: true)

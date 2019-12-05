@@ -111,6 +111,7 @@ class SessionViewController: UIViewController, UITextFieldDelegate, UpdateInterv
     func updateInterval(with interval: Interval, at index: Int) {
         self.intervals[index] = interval
         self.intervalTableView.reloadData()
+        print(self.intervals)
         self.saveSession()
     }
     
@@ -162,10 +163,6 @@ extension SessionViewController: UITableViewDelegate, UITableViewDataSource {
         return UISwipeActionsConfiguration(actions: [deleteAtion])
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "intervalDetails", sender: self)
-    }
-    
     // MARK: - Reorder TableView
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let moveInterval = self.intervals[sourceIndexPath.row]
@@ -179,6 +176,12 @@ extension SessionViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
         return false
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = self.intervalTableView.cellForRow(at: indexPath) {
+            cell.selectionStyle = .none
+        }
     }
     
 }

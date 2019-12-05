@@ -31,7 +31,8 @@ class IntervalTableViewCell: UITableViewCell {
     
     public func configureCell(interval: Interval) {
         self.actionLbl.text = "\(interval.action.rawValue)"
-        self.durationLbl.text = "\(interval.duration)"
+        self.durationLbl.backgroundColor = interval.action.color
+        self.durationLbl.text = interval.time
     }
     
 }

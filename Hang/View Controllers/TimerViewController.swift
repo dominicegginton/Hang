@@ -65,6 +65,9 @@ class TimerViewController: UIViewController {
         if self.readyTick > 0 {
             self.messageLbl.text = "Get Ready"
             self.title = "\(self.readyTick)"
+            let progressTick = 5 - (self.readyTick - 1)
+            let progress: Float = Float(progressTick) / Float(5)
+            self.progressBar.setProgress(progress, animated: true)
             self.readyTick -= 1
         } else {
             if self.intervalTick > 0 {

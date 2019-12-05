@@ -10,13 +10,36 @@ import UIKit
 
 class TimerViewController: UIViewController {
     
+    // UI Outles
+    @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var timerControlBtn: UIBarButtonItem!
+    @IBOutlet weak var messageLbl: UILabel!
+    @IBOutlet weak var intervalTableView: UITableView!
+    
+    // Session ID
     public var sessionId: Int?
+    public var intervals: [Interval] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        self.title = try? Sessions.instance.getSession(atIndex: self.sessionId!).name
+        
+        if let id = sessionId {
+            do {
+                let session = try Sessions.instance.getSession(atIndex: id)
+                self.intervals = session.intervals
+            } catch {
+                print(">>> error loading session")
+            }
+        }
+        
+        // Interval tableView Deleagte and Data Source
+        self.intervalTableView.delegate = self
+        self.intervalTableView.dataSource = self
+        self.intervalTableView.allowsSelection = false
+        self.intervalTableView.reloadData()
+        
+        // Setup UI
+        self.title = "00:00"
     }
     
 
@@ -30,4 +53,18 @@ class TimerViewController: UIViewController {
     }
     */
 
+}
+
+extension TimerViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.intervals.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = Bundle.main.loadNibNamed("IntervalTableViewCell", owner: self, options: nil)?.first as! IntervalTableViewCell
+        // Configure the cell...
+        let interval = self.intervals[indexPath.row]
+        cell.configureCell(interval: interval)
+        return cell
+    }
 }

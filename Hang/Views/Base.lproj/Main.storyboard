@@ -257,7 +257,7 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="138.61607142857142"/>
         </scene>
-        <!--Session Name-->
+        <!--00:00-->
         <scene sceneID="3CL-xq-ALt">
             <objects>
                 <viewController id="UGZ-P7-Z6q" customClass="TimerViewController" customModule="Hang" customModuleProvider="target" sceneMemberID="viewController">
@@ -265,55 +265,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ILr-HG-xbO">
-                                <rect key="frame" x="18" y="145" width="339" height="2"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ILr-HG-xbO">
+                                <rect key="frame" x="18" y="186.33333333333334" width="339" height="2"/>
                                 <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
-                            <stackView opaque="NO" contentMode="left" ambiguous="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rSZ-NR-lKn">
-                                <rect key="frame" x="18" y="163" width="339" height="26.333333333333371"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="80" translatesAutoresizingMaskIntoConstraints="NO" id="yX0-YH-Gtc">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="26.333333333333332"/>
-                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="ECR-FY-6Wi"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="90" translatesAutoresizingMaskIntoConstraints="NO" id="R1o-aA-OLx">
-                                        <rect key="frame" x="90" y="0.0" width="249" height="26.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MMr-Ny-gCQ">
-                                <rect key="frame" x="0.0" y="206" width="375" height="565"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="90" translatesAutoresizingMaskIntoConstraints="NO" id="R1o-aA-OLx">
+                                <rect key="frame" x="18" y="140" width="339" height="26.333333333333343"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MMr-Ny-gCQ">
+                                <rect key="frame" x="0.0" y="208.33333333333331" width="375" height="569.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="rSZ-NR-lKn" firstAttribute="leading" secondItem="t9p-RJ-CAr" secondAttribute="leading" constant="18" id="2Hq-3H-bh6"/>
-                            <constraint firstItem="t9p-RJ-CAr" firstAttribute="trailing" secondItem="rSZ-NR-lKn" secondAttribute="trailing" constant="18" id="BY7-6o-nyO"/>
-                            <constraint firstItem="MMr-Ny-gCQ" firstAttribute="top" secondItem="rSZ-NR-lKn" secondAttribute="bottom" constant="20" id="DAQ-bB-nUt"/>
-                            <constraint firstItem="rSZ-NR-lKn" firstAttribute="top" secondItem="ILr-HG-xbO" secondAttribute="bottom" constant="20" id="a5I-3O-56l"/>
-                            <constraint firstItem="MMr-Ny-gCQ" firstAttribute="leading" secondItem="t9p-RJ-CAr" secondAttribute="leading" id="jMU-uk-0vX"/>
-                            <constraint firstItem="MMr-Ny-gCQ" firstAttribute="trailing" secondItem="t9p-RJ-CAr" secondAttribute="trailing" id="nc7-dW-NEz"/>
-                            <constraint firstItem="t9p-RJ-CAr" firstAttribute="bottom" secondItem="MMr-Ny-gCQ" secondAttribute="bottom" id="wUw-4X-qsJ"/>
+                            <constraint firstItem="R1o-aA-OLx" firstAttribute="leading" secondItem="t9p-RJ-CAr" secondAttribute="leading" constant="18" id="1Lc-Td-8KC"/>
+                            <constraint firstItem="MMr-Ny-gCQ" firstAttribute="top" secondItem="ILr-HG-xbO" secondAttribute="bottom" constant="20" id="38f-l4-Vay"/>
+                            <constraint firstItem="t9p-RJ-CAr" firstAttribute="trailing" secondItem="R1o-aA-OLx" secondAttribute="trailing" constant="18" id="5x5-3E-2os"/>
+                            <constraint firstItem="MMr-Ny-gCQ" firstAttribute="trailing" secondItem="t9p-RJ-CAr" secondAttribute="trailing" id="Dup-bl-1TR"/>
+                            <constraint firstItem="MMr-Ny-gCQ" firstAttribute="leading" secondItem="t9p-RJ-CAr" secondAttribute="leading" id="Gcx-Tl-fEG"/>
+                            <constraint firstItem="R1o-aA-OLx" firstAttribute="top" secondItem="t9p-RJ-CAr" secondAttribute="top" id="IiN-aG-Tj0"/>
+                            <constraint firstItem="t9p-RJ-CAr" firstAttribute="bottom" secondItem="MMr-Ny-gCQ" secondAttribute="bottom" id="dqI-i6-Hmj"/>
+                            <constraint firstItem="ILr-HG-xbO" firstAttribute="leading" secondItem="W7R-mO-rUm" secondAttribute="leading" constant="18" id="eZN-GQ-VXH"/>
+                            <constraint firstItem="ILr-HG-xbO" firstAttribute="top" secondItem="R1o-aA-OLx" secondAttribute="bottom" constant="20" id="flO-gH-anx"/>
+                            <constraint firstAttribute="trailing" secondItem="ILr-HG-xbO" secondAttribute="trailing" constant="18" id="zQY-bL-aPq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="t9p-RJ-CAr"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Session Name" id="uAR-li-jjo">
+                    <navigationItem key="navigationItem" title="00:00" id="uAR-li-jjo">
                         <barButtonItem key="rightBarButtonItem" title="Start" id="Hiq-ge-X9l"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="intervalTableView" destination="MMr-Ny-gCQ" id="kvf-Wj-CSF"/>
+                        <outlet property="messageLbl" destination="R1o-aA-OLx" id="yAs-IV-S1t"/>
+                        <outlet property="progressBar" destination="ILr-HG-xbO" id="OQK-Zr-Sq3"/>
+                        <outlet property="timerControlBtn" destination="Hiq-ge-X9l" id="74k-aK-xPV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jbg-Wh-Q5Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1996" y="481"/>
+            <point key="canvasLocation" x="1996" y="480.29556650246309"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bVs-m4-aHZ">

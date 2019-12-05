@@ -10,24 +10,118 @@ import UIKit
 
 class TimerViewController: UIViewController {
     
+    // UI Outles
+    @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var timerControlBtn: UIBarButtonItem!
+    @IBOutlet weak var messageLbl: UILabel!
+    @IBOutlet weak var intervalTableView: UITableView!
+    
+    // Session ID
     public var sessionId: Int?
+    public var intervals: [Interval] = []
+    
+    // Timer
+    var timer: Timer?
+    var timerIsRunning: Bool = false
+    var currentInterval: Interval?
+    var intervalTick: Int = 0
+    var readyTick: Int = 5
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        self.title = try? Sessions.instance.getSession(atIndex: self.sessionId!).name
+        
+        if let id = sessionId {
+            do {
+                let session = try Sessions.instance.getSession(atIndex: id)
+                self.intervals = session.intervals
+            } catch {
+                print(">>> error loading session")
+            }
+        }
+        
+        // Interval tableView Deleagte and Data Source
+        self.intervalTableView.delegate = self
+        self.intervalTableView.dataSource = self
+        self.intervalTableView.allowsSelection = false
+        self.intervalTableView.reloadData()
+        
+        // Setup UI
+        self.title = "00:00"
+        self.timerControlBtn.title = "Start"
+        self.progressBar.progress = 0
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if self.isMovingFromParent {
+            if self.timer != nil {
+                self.timer?.invalidate()
+            }
+        }
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func fireTimer() {
+        if self.readyTick > 0 {
+            self.messageLbl.text = "Get Ready"
+            self.title = "\(self.readyTick)"
+            self.readyTick -= 1
+        } else {
+            if self.intervalTick > 0 {
+                self.messageLbl.text = "\(self.currentInterval?.action?.rawValue ?? "")"
+                self.title = "\(self.intervalTick)"
+                let progressTick = self.currentInterval!.duration - (self.intervalTick - 1)
+                let progress: Float = Float(progressTick) / Float(self.currentInterval!.duration)
+                print(progress)
+                self.progressBar.setProgress(progress, animated: true)
+                self.intervalTick -= 1
+            } else {
+                if self.intervals.count > 0 {
+                    self.progressBar.progress = 0
+                    self.currentInterval = self.intervals[0]
+                    self.intervalTick = self.currentInterval!.duration
+                    self.intervals.remove(at: 0)
+                    self.intervalTableView.deleteRows(at: [IndexPath(row: 0, section: 0)], with: .top)
+                    self.title = "\(self.intervalTick)"
+                    self.messageLbl.text = "\(self.currentInterval?.action?.rawValue ?? "")"
+                    self.intervalTick -= 1
+                    let progress: Float = Float(1) / Float(self.currentInterval!.duration)
+                    self.progressBar.setProgress(progress, animated: true)
+                } else {
+                    self.progressBar.setProgress(1, animated: true)
+                    self.title = "\(self.intervalTick)"
+                    self.messageLbl.text = "Session Completed 💪"
+                    print(">>> timer ended")
+                    self.timer?.invalidate()
+                    self.timerIsRunning = false
+                }
+            }
+        }
     }
-    */
 
+    @IBAction func timerControlBtnClick(_ sender: Any) {
+        if !self.timerIsRunning {
+            self.readyTick = 5
+            self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+            self.timerControlBtn.title = "Pause"
+        } else {
+            self.timer?.invalidate()
+            self.timerControlBtn.title = "Start"
+        }
+        self.timerIsRunning = !self.timerIsRunning
+    }
+}
+
+extension TimerViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.intervals.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = Bundle.main.loadNibNamed("IntervalTableViewCell", owner: self, options: nil)?.first as! IntervalTableViewCell
+        // Configure the cell...
+        let interval = self.intervals[indexPath.row]
+        cell.configureCell(interval: interval)
+        return cell
+    }
 }

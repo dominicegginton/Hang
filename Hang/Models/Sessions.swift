@@ -37,6 +37,23 @@ class Sessions {
     
     init() {
         self.sessions = []
+        self.load()
+    }
+    
+    func save() {
+        if let data = try? JSONEncoder().encode(self.sessions) {
+            let jsonString = String(data: data, encoding: .utf8)
+            print(">>> saving \(jsonString!)")
+            UserDefaults.standard.set(jsonString!, forKey: "sessions")
+        }
+    }
+    
+    func load() {
+        if let jsonString = UserDefaults.standard.value(forKey: "sessions") as? String {
+            let decorder = JSONDecoder()
+            let sessions = try? decorder.decode([Session].self, from: jsonString.data(using: .utf8)!)
+            self.sessions = sessions!
+        }
     }
     
     public var count: Int {
@@ -45,6 +62,7 @@ class Sessions {
     
     public func add(session: Session) throws {
         self.sessions.append(session)
+        self.save()
     }
     
     public func getSession(atIndex index: Int) throws -> Session {
@@ -61,6 +79,7 @@ class Sessions {
         } else {
             throw SessionsError.outOfRange(index)
         }
+        self.save()
     }
     
     public func update(session updatedSession: Session, atIndex index: Int) throws {
@@ -69,6 +88,7 @@ class Sessions {
         } else {
             throw SessionsError.outOfRange(index)
         }
+        self.save()
     }
     
     public func remove(atIndex index: Int) throws {
@@ -77,10 +97,12 @@ class Sessions {
         } else {
             throw SessionsError.outOfRange(index)
         }
+        self.save()
     }
     
     public func clearSessions() {
         self.sessions.removeAll()
+        self.save()
     }
     
     enum SessionsError: Error {

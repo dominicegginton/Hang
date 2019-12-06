@@ -41,7 +41,7 @@ class SessionsTest: XCTestCase {
         }
     }
     
-    func testRetrieveSingleSession() {
+    func testGetSingleSession() {
         let sessions = Sessions.instance
         do {
             let newSession = Session(name: "Test Session", intervals: [Interval(action: .hang, duration: 3)])
@@ -56,7 +56,7 @@ class SessionsTest: XCTestCase {
         }
     }
     
-    func testRetrieveValidSession() {
+    func testGetValidSession() {
         let sessions = Sessions.instance
         do {
             let newSessionOne = Session(name: "Test Session One", intervals: [Interval(action: .hang, duration: 3)])
@@ -79,7 +79,7 @@ class SessionsTest: XCTestCase {
         }
     }
     
-    func testRetrieveInvaildSession() {
+    func testGetInvaildSession() {
         let sessions = Sessions.instance
         do {
             let newSessionOne = Session(name: "Test Session One", intervals: [Interval(action: .hang, duration: 3)])
@@ -224,6 +224,32 @@ class SessionsTest: XCTestCase {
             XCTFail()
         } catch Sessions.SessionsError.outOfRange(let index) {
             XCTAssertEqual(index, 4, "the exception shound pass array index 4")
+        } catch {
+            XCTFail()
+        }
+    }
+    
+    func testTotalDuration() {
+        let sessions = Sessions.instance
+        do {
+            let newSession = Session(name: "Test Session", intervals: [Interval(action: .hang, duration: 3)])
+            try sessions.add(session: newSession)
+            XCTAssertEqual(sessions.count, 1)
+            let session = try sessions.getSession(atIndex: 0)
+            XCTAssertEqual(session.totalDuration, 3)
+        } catch {
+            XCTFail()
+        }
+    }
+    
+    func testTime() {
+        let sessions = Sessions.instance
+        do {
+            let newSession = Session(name: "Test Session", intervals: [Interval(action: .hang, duration: 3), Interval(action: .rest, duration: 3), Interval(action: .rest, duration: 3)])
+            try sessions.add(session: newSession)
+            XCTAssertEqual(sessions.count, 1)
+            let session = try sessions.getSession(atIndex: 0)
+            XCTAssertEqual(session.time, "00:09")
         } catch {
             XCTFail()
         }

@@ -27,14 +27,29 @@ enum Action: String, CaseIterable, Codable {
 }
 
 class Interval: Time, Codable{
+    // Action being carried out with the interval
     var action: Action
+    // Duration of the interval in seconds
     var duration: Int
     
+    /**
+    Inilizes a Interval Class
+
+    - Parameter action: the actioing being carried out within the interval
+
+    - Returns: Self
+    */
     init(action: Action, duration: Int) {
+        // Setup Instance
         self.action = action
         self.duration = duration
     }
     
+    /**
+     Time reersents the human readable time
+
+    - Returns: String repersetning the total xtime of the interval
+    */
     public var time: String {
         return super.convertToTime(seconds: self.duration)
     }

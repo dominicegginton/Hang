@@ -27,6 +27,9 @@
                                                     <constraint firstAttribute="height" constant="30" id="CpV-I6-FGJ"/>
                                                 </constraints>
                                                 <state key="normal" title="Hangboarding: More Info ℹ︎"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="infoBtn"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="openInfo:" destination="7Wg-hL-pfE" eventType="touchUpInside" id="bpL-vw-RvU"/>
                                                 </connections>
@@ -49,6 +52,9 @@
                                                     <constraint firstAttribute="height" constant="30" id="cg8-c3-4BX"/>
                                                 </constraints>
                                                 <state key="normal" title="Send Feature Request / Bug Report 🐞"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="emailBtn"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="sendEmailBtnClick:" destination="7Wg-hL-pfE" eventType="touchUpInside" id="OlY-Nh-ctg"/>
                                                 </connections>
@@ -335,6 +341,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Hang" id="dVE-9v-ZGo">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="gear" catalog="system" id="q3W-2D-v6Z">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="settingsBtn"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <segue destination="7Wg-hL-pfE" kind="show" identifier="settings" id="pEv-ra-ke7"/>
                             </connections>
@@ -429,6 +438,9 @@
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="square.and.arrow.up.on.square" catalog="system" id="lZP-KY-UDz">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="shareBtn"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="shareBtnClick:" destination="UGZ-P7-Z6q" id="tuM-Ve-B2Y"/>
                                 </connections>

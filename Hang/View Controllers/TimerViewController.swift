@@ -82,6 +82,7 @@ class TimerViewController: UIViewController {
                 if self.intervals.count > 0 {
                     self.progressBar.progress = 0
                     self.currentInterval = self.intervals[0]
+                    self.progressBar.tintColor = currentInterval?.action.color
                     self.intervalTick = self.currentInterval!.duration
                     self.intervals.remove(at: 0)
                     self.intervalTableView.deleteRows(at: [IndexPath(row: 0, section: 0)], with: .top)

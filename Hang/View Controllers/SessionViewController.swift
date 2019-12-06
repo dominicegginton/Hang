@@ -20,9 +20,7 @@ class SessionViewController: UIViewController, UITextFieldDelegate, UpdateInterv
     // UI Outlets
     @IBOutlet weak var doneBtn: UIBarButtonItem!
     @IBOutlet weak var sessionNameTxtBox: UITextField!
-    @IBOutlet weak var addIntervalButton: UIButton!
     @IBOutlet weak var intervalTableView: UITableView!
-    @IBOutlet weak var sessionTotalDurationLbl: UILabel!
     
     // Session ID
     public var sessionId: Int?
@@ -36,17 +34,13 @@ class SessionViewController: UIViewController, UITextFieldDelegate, UpdateInterv
         if let id: Int = sessionId {
             if let session: Session = try? Sessions.instance.getSession(atIndex: id) {
                 self.intervals = session.intervals
-                self.title = session.name
                 self.sessionNameTxtBox.text = session.name
-                self.sessionTotalDurationLbl.text = "\(session.totalDuration)"
             }
         }
         
         // Setup UI
         self.doneBtn.isEnabled = false
         self.sessionNameTxtBox.delegate = self
-        self.sessionTotalDurationLbl.layer.masksToBounds = true
-        self.sessionTotalDurationLbl.layer.cornerRadius = 5
         
         // Interval Table View Delegates
         self.intervalTableView.delegate = self

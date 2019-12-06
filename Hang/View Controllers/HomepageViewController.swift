@@ -100,18 +100,7 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
             success(true)
         })
         editAction.backgroundColor = UIColor.systemIndigo
-        let shearAction = UIContextualAction(style: .normal, title: "Share", handler: { (action: UIContextualAction, view: UIView, success: (Bool) -> Void) in
-            let bounds = UIScreen.main.bounds
-            UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0.0)
-            self.view.drawHierarchy(in: bounds, afterScreenUpdates: false)
-            let img = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            let activityViewController = UIActivityViewController(activityItems: [img!], applicationActivities: nil)
-            activityViewController.popoverPresentationController?.sourceView = self.view
-            self.present(activityViewController, animated: true, completion: nil)
-        })
-        shearAction.backgroundColor = .systemOrange
-        return UISwipeActionsConfiguration(actions: [editAction, shearAction])
+        return UISwipeActionsConfiguration(actions: [editAction])
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

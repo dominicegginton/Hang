@@ -82,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YmX-dM-Kb9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1996" y="-916"/>
+            <point key="canvasLocation" x="2142" y="-584"/>
         </scene>
         <!--Session-->
         <scene sceneID="Y3n-yz-6G5">
@@ -223,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zQL-qy-A0F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1996" y="-204"/>
+            <point key="canvasLocation" x="2142" y="138"/>
         </scene>
         <!--Interval-->
         <scene sceneID="hNd-Kr-XPk">
@@ -306,7 +306,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1zy-yi-yvW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2828" y="-204.67980295566502"/>
+            <point key="canvasLocation" x="2988" y="137"/>
         </scene>
         <!--Hompage-->
         <scene sceneID="tne-QT-ifu">
@@ -419,14 +419,21 @@
                         <viewLayoutGuide key="safeArea" id="t9p-RJ-CAr"/>
                     </view>
                     <navigationItem key="navigationItem" title="00:00" id="uAR-li-jjo">
-                        <barButtonItem key="rightBarButtonItem" title="Start" id="Hiq-ge-X9l">
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="timerControlBtn"/>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="timerControlBtnClick:" destination="UGZ-P7-Z6q" id="R3j-7c-Fom"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Start" id="Hiq-ge-X9l">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="timerControlBtn"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="timerControlBtnClick:" destination="UGZ-P7-Z6q" id="R3j-7c-Fom"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="square.and.arrow.up.on.square" catalog="system" id="lZP-KY-UDz">
+                                <connections>
+                                    <action selector="shareBtnClick:" destination="UGZ-P7-Z6q" id="tuM-Ve-B2Y"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="intervalTableView" destination="MMr-Ny-gCQ" id="kvf-Wj-CSF"/>
@@ -437,7 +444,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jbg-Wh-Q5Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1996" y="480.29556650246309"/>
+            <point key="canvasLocation" x="2142" y="873"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bVs-m4-aHZ">
@@ -462,5 +469,6 @@
         <image name="gear" catalog="system" width="64" height="58"/>
         <image name="plus" catalog="system" width="64" height="56"/>
         <image name="rectangle.compress.vertical" catalog="system" width="64" height="64"/>
+        <image name="square.and.arrow.up.on.square" catalog="system" width="58" height="64"/>
     </resources>
 </document>

@@ -9,15 +9,33 @@
 import Foundation
 
 class Session: Time, Codable {
+    
+    // Session Name
     var name: String
+    // Session Intervals
     var intervals: [Interval]
     
+    /**
+    Creates a new instance of Session
+
+    - Parameter name: The name of the session
+    - Parameter intervals: Array of intervals making up the session
+
+    - Returns: A new insatnce of Session
+    */
     init(name: String, intervals: [Interval]) {
+        // Set instance vars
         self.name = name
         self.intervals = intervals
     }
     
+    /**
+    Gets total time of the instance
+
+    - Returns: Int repersenting the total duration of the session
+    */
     var totalDuration: Int {
+        // Loop over intervals return the total of there durations
         var duration: Int = 0
         for interval in self.intervals {
             duration += interval.duration
@@ -25,7 +43,13 @@ class Session: Time, Codable {
         return duration
     }
     
+    /**
+    Gets a human readble string of the duration of the session in MM:SS format
+
+    - Returns: String repersenting the time of the sesion
+    */
     public var time: String {
+        // Call time class as parent
         return super.convertToTime(seconds: self.totalDuration)
     }
 }

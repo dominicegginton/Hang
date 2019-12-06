@@ -10,7 +10,7 @@
         <!--Settings-->
         <scene sceneID="iFo-QT-oHV">
             <objects>
-                <viewController id="7Wg-hL-pfE" sceneMemberID="viewController">
+                <viewController id="7Wg-hL-pfE" customClass="SettingsViewController" customModule="Hang" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YMJ-oE-ggh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,6 +27,9 @@
                                                     <constraint firstAttribute="height" constant="30" id="CpV-I6-FGJ"/>
                                                 </constraints>
                                                 <state key="normal" title="Hangboarding: More Info ℹ︎"/>
+                                                <connections>
+                                                    <action selector="openInfo:" destination="7Wg-hL-pfE" eventType="touchUpInside" id="bpL-vw-RvU"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -46,6 +49,9 @@
                                                     <constraint firstAttribute="height" constant="30" id="cg8-c3-4BX"/>
                                                 </constraints>
                                                 <state key="normal" title="Send Feature Request / Bug Report 🐞"/>
+                                                <connections>
+                                                    <action selector="sendEmailBtnClick:" destination="7Wg-hL-pfE" eventType="touchUpInside" id="OlY-Nh-ctg"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

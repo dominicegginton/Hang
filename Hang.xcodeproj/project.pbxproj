@@ -29,6 +29,7 @@
 		F29F33592385596E00B28848 /* SessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29F33572385596E00B28848 /* SessionTableViewCell.swift */; };
 		F29F335A2385596E00B28848 /* SessionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F29F33582385596E00B28848 /* SessionTableViewCell.xib */; };
 		F2B2BDC8239A06AE009AD4BF /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2BDC7239A06AE009AD4BF /* Interval.swift */; };
+		F2B2BDCA239A66E8009AD4BF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2BDC9239A66E8009AD4BF /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		F29F33572385596E00B28848 /* SessionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTableViewCell.swift; sourceTree = "<group>"; };
 		F29F33582385596E00B28848 /* SessionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionTableViewCell.xib; sourceTree = "<group>"; };
 		F2B2BDC7239A06AE009AD4BF /* Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
+		F2B2BDC9239A66E8009AD4BF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				F29F33572385596E00B28848 /* SessionTableViewCell.swift */,
 				F29412FA2395D345003F2298 /* IntervalTableViewCell.swift */,
 				F2889BED23971FB6001DF789 /* IntervalViewController.swift */,
+				F2B2BDC9239A66E8009AD4BF /* SettingsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				F23AB4B323829B50002990BF /* AppDelegate.swift in Sources */,
 				F23AB4ED2382A95C002990BF /* HomepageViewController.swift in Sources */,
 				F23AB4B523829B50002990BF /* SceneDelegate.swift in Sources */,
+				F2B2BDCA239A66E8009AD4BF /* SettingsViewController.swift in Sources */,
 				F2560B002395231000485157 /* Interval.swift in Sources */,
 				F23AB4BD23829B50002990BF /* Hang.xcdatamodeld in Sources */,
 			);

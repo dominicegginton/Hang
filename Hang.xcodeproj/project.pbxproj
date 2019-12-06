@@ -9,13 +9,27 @@
 /* Begin PBXBuildFile section */
 		F23AB4B323829B50002990BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23AB4B223829B50002990BF /* AppDelegate.swift */; };
 		F23AB4B523829B50002990BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23AB4B423829B50002990BF /* SceneDelegate.swift */; };
-		F23AB4B723829B50002990BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23AB4B623829B50002990BF /* ViewController.swift */; };
 		F23AB4BA23829B50002990BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F23AB4B823829B50002990BF /* Main.storyboard */; };
 		F23AB4BD23829B50002990BF /* Hang.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F23AB4BB23829B50002990BF /* Hang.xcdatamodeld */; };
 		F23AB4BF23829B53002990BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F23AB4BE23829B53002990BF /* Assets.xcassets */; };
 		F23AB4C223829B53002990BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F23AB4C023829B53002990BF /* LaunchScreen.storyboard */; };
-		F23AB4CD23829B53002990BF /* HangTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23AB4CC23829B53002990BF /* HangTests.swift */; };
+		F23AB4CD23829B53002990BF /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23AB4CC23829B53002990BF /* Sessions.swift */; };
 		F23AB4D823829B53002990BF /* HangUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23AB4D723829B53002990BF /* HangUITests.swift */; };
+		F23AB4E62382A0BA002990BF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F23AB4E52382A0BA002990BF /* README.md */; };
+		F23AB4E82382A0CB002990BF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F23AB4E72382A0CB002990BF /* .gitignore */; };
+		F23AB4ED2382A95C002990BF /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23AB4EC2382A95C002990BF /* HomepageViewController.swift */; };
+		F2560AFE239516EC00485157 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2560AFD239516EC00485157 /* SessionViewController.swift */; };
+		F2560B002395231000485157 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2560AFF2395231000485157 /* Interval.swift */; };
+		F2889BEE23971FB6001DF789 /* IntervalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2889BED23971FB6001DF789 /* IntervalViewController.swift */; };
+		F29412F72395C448003F2298 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29412F62395C448003F2298 /* TimerViewController.swift */; };
+		F29412FC2395D345003F2298 /* IntervalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29412FA2395D345003F2298 /* IntervalTableViewCell.swift */; };
+		F29412FD2395D345003F2298 /* IntervalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F29412FB2395D345003F2298 /* IntervalTableViewCell.xib */; };
+		F29BF57F2399ACA1007EB17C /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29BF57E2399ACA1007EB17C /* Time.swift */; };
+		F29F335223853D0000B28848 /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29F335123853D0000B28848 /* Sessions.swift */; };
+		F29F33592385596E00B28848 /* SessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29F33572385596E00B28848 /* SessionTableViewCell.swift */; };
+		F29F335A2385596E00B28848 /* SessionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F29F33582385596E00B28848 /* SessionTableViewCell.xib */; };
+		F2B2BDC8239A06AE009AD4BF /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2BDC7239A06AE009AD4BF /* Interval.swift */; };
+		F2B2BDCA239A66E8009AD4BF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2BDC9239A66E8009AD4BF /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,18 +53,32 @@
 		F23AB4AF23829B50002990BF /* Hang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F23AB4B223829B50002990BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F23AB4B423829B50002990BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F23AB4B623829B50002990BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F23AB4B923829B50002990BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F23AB4BC23829B50002990BF /* Hang.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hang.xcdatamodel; sourceTree = "<group>"; };
 		F23AB4BE23829B53002990BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F23AB4C123829B53002990BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F23AB4C323829B53002990BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F23AB4C823829B53002990BF /* HangTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HangTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F23AB4CC23829B53002990BF /* HangTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangTests.swift; sourceTree = "<group>"; };
+		F23AB4CC23829B53002990BF /* Sessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessions.swift; sourceTree = "<group>"; };
 		F23AB4CE23829B53002990BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F23AB4D323829B53002990BF /* HangUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HangUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F23AB4D723829B53002990BF /* HangUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangUITests.swift; sourceTree = "<group>"; };
 		F23AB4D923829B53002990BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F23AB4E52382A0BA002990BF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F23AB4E72382A0CB002990BF /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F23AB4EC2382A95C002990BF /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
+		F2560AFD239516EC00485157 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
+		F2560AFF2395231000485157 /* Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
+		F2889BED23971FB6001DF789 /* IntervalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalViewController.swift; sourceTree = "<group>"; };
+		F29412F62395C448003F2298 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		F29412FA2395D345003F2298 /* IntervalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTableViewCell.swift; sourceTree = "<group>"; };
+		F29412FB2395D345003F2298 /* IntervalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntervalTableViewCell.xib; sourceTree = "<group>"; };
+		F29BF57E2399ACA1007EB17C /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		F29F335123853D0000B28848 /* Sessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessions.swift; sourceTree = "<group>"; };
+		F29F33572385596E00B28848 /* SessionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTableViewCell.swift; sourceTree = "<group>"; };
+		F29F33582385596E00B28848 /* SessionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionTableViewCell.xib; sourceTree = "<group>"; };
+		F2B2BDC7239A06AE009AD4BF /* Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
+		F2B2BDC9239A66E8009AD4BF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +109,8 @@
 		F23AB4A623829B50002990BF = {
 			isa = PBXGroup;
 			children = (
+				F23AB4E72382A0CB002990BF /* .gitignore */,
+				F23AB4E52382A0BA002990BF /* README.md */,
 				F23AB4B123829B50002990BF /* Hang */,
 				F23AB4CB23829B53002990BF /* HangTests */,
 				F23AB4D623829B53002990BF /* HangUITests */,
@@ -101,10 +131,11 @@
 		F23AB4B123829B50002990BF /* Hang */ = {
 			isa = PBXGroup;
 			children = (
+				F23AB4EB2382A0F5002990BF /* Models */,
+				F23AB4EA2382A0F0002990BF /* Views */,
+				F23AB4E92382A0DC002990BF /* View Controllers */,
 				F23AB4B223829B50002990BF /* AppDelegate.swift */,
 				F23AB4B423829B50002990BF /* SceneDelegate.swift */,
-				F23AB4B623829B50002990BF /* ViewController.swift */,
-				F23AB4B823829B50002990BF /* Main.storyboard */,
 				F23AB4BE23829B53002990BF /* Assets.xcassets */,
 				F23AB4C023829B53002990BF /* LaunchScreen.storyboard */,
 				F23AB4C323829B53002990BF /* Info.plist */,
@@ -116,8 +147,9 @@
 		F23AB4CB23829B53002990BF /* HangTests */ = {
 			isa = PBXGroup;
 			children = (
-				F23AB4CC23829B53002990BF /* HangTests.swift */,
+				F23AB4CC23829B53002990BF /* Sessions.swift */,
 				F23AB4CE23829B53002990BF /* Info.plist */,
+				F2B2BDC7239A06AE009AD4BF /* Interval.swift */,
 			);
 			path = HangTests;
 			sourceTree = "<group>";
@@ -129,6 +161,40 @@
 				F23AB4D923829B53002990BF /* Info.plist */,
 			);
 			path = HangUITests;
+			sourceTree = "<group>";
+		};
+		F23AB4E92382A0DC002990BF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F23AB4EC2382A95C002990BF /* HomepageViewController.swift */,
+				F2560AFD239516EC00485157 /* SessionViewController.swift */,
+				F29412F62395C448003F2298 /* TimerViewController.swift */,
+				F29F33572385596E00B28848 /* SessionTableViewCell.swift */,
+				F29412FA2395D345003F2298 /* IntervalTableViewCell.swift */,
+				F2889BED23971FB6001DF789 /* IntervalViewController.swift */,
+				F2B2BDC9239A66E8009AD4BF /* SettingsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F23AB4EA2382A0F0002990BF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F23AB4B823829B50002990BF /* Main.storyboard */,
+				F29F33582385596E00B28848 /* SessionTableViewCell.xib */,
+				F29412FB2395D345003F2298 /* IntervalTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F23AB4EB2382A0F5002990BF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F29F335123853D0000B28848 /* Sessions.swift */,
+				F2560AFF2395231000485157 /* Interval.swift */,
+				F29BF57E2399ACA1007EB17C /* Time.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,8 +301,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F23AB4E82382A0CB002990BF /* .gitignore in Resources */,
 				F23AB4C223829B53002990BF /* LaunchScreen.storyboard in Resources */,
+				F29412FD2395D345003F2298 /* IntervalTableViewCell.xib in Resources */,
+				F29F335A2385596E00B28848 /* SessionTableViewCell.xib in Resources */,
 				F23AB4BF23829B53002990BF /* Assets.xcassets in Resources */,
+				F23AB4E62382A0BA002990BF /* README.md in Resources */,
 				F23AB4BA23829B50002990BF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,9 +332,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F23AB4B723829B50002990BF /* ViewController.swift in Sources */,
+				F29BF57F2399ACA1007EB17C /* Time.swift in Sources */,
+				F2560AFE239516EC00485157 /* SessionViewController.swift in Sources */,
+				F2889BEE23971FB6001DF789 /* IntervalViewController.swift in Sources */,
+				F29F33592385596E00B28848 /* SessionTableViewCell.swift in Sources */,
+				F29412FC2395D345003F2298 /* IntervalTableViewCell.swift in Sources */,
+				F29412F72395C448003F2298 /* TimerViewController.swift in Sources */,
+				F29F335223853D0000B28848 /* Sessions.swift in Sources */,
 				F23AB4B323829B50002990BF /* AppDelegate.swift in Sources */,
+				F23AB4ED2382A95C002990BF /* HomepageViewController.swift in Sources */,
 				F23AB4B523829B50002990BF /* SceneDelegate.swift in Sources */,
+				F2B2BDCA239A66E8009AD4BF /* SettingsViewController.swift in Sources */,
+				F2560B002395231000485157 /* Interval.swift in Sources */,
 				F23AB4BD23829B50002990BF /* Hang.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,7 +352,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F23AB4CD23829B53002990BF /* HangTests.swift in Sources */,
+				F2B2BDC8239A06AE009AD4BF /* Interval.swift in Sources */,
+				F23AB4CD23829B53002990BF /* Sessions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +525,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dominicegginton.Hang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -463,6 +544,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dominicegginton.Hang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

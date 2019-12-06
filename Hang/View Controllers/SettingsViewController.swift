@@ -52,11 +52,16 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
                 alert.addAction(alertYes)
                 present(alert, animated: true, completion: nil)
             case MFMailComposeResult.saved:
-                print("Saved")
+                let alert = UIAlertController(title: "Feedback is Always Welcome", message: "Thank you for considering to send us feedback to make this app better", preferredStyle: .actionSheet)
+                let alertNo = UIAlertAction(title: "No Problem", style: .default, handler: nil)
+                alert.addAction(alertNo)
+                let alertYes = UIAlertAction(title: "Im Sure", style: .destructive, handler: nil)
+                alert.addAction(alertYes)
+                present(alert, animated: true, completion: nil)
             case MFMailComposeResult.sent:
                 controller.dismiss(animated: true, completion: nil)
                 let alert = UIAlertController(title: "Thank You For Your Feedback", message: "Your feedback will help to make this app better", preferredStyle: .actionSheet)
-                let alertNo = UIAlertAction(title: "No Problem", style: .default, handler: self.sendEmailBtnClick(_:))
+                let alertNo = UIAlertAction(title: "No Problem", style: .default, handler: nil)
                 alert.addAction(alertNo)
                 present(alert, animated: true, completion: nil)
             case MFMailComposeResult.failed:

@@ -26,7 +26,7 @@ class HomepageViewController: UIViewController, UpdateSessionDelagate {
     
     @IBAction func newSession(_ sender: Any) {
         let newSession = Session(name: "", intervals: [])
-        Sessions.instance.add(session: newSession)
+        try? Sessions.instance.add(session: newSession)
         self.sessionTableView.reloadData()
         let indexPath = IndexPath(row: Sessions.instance.count - 1, section: 0)
         self.sessionTableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)

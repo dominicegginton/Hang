@@ -43,7 +43,7 @@ class Sessions {
         return self.sessions.count
     }
     
-    public func add(session: Session) {
+    public func add(session: Session) throws {
         self.sessions.append(session)
     }
     
@@ -77,6 +77,10 @@ class Sessions {
         } else {
             throw SessionsError.outOfRange(index)
         }
+    }
+    
+    public func clearSessions() {
+        self.sessions.removeAll()
     }
     
     enum SessionsError: Error {

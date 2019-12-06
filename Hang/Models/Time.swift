@@ -10,6 +10,13 @@ import Foundation
 
 class Time {
     
+    /**
+    Creates a time strign from a Int
+
+    - Parameter seconds: int repersenting the number of seconds
+
+    - Returns: String in MM:SS format for easy reading
+    */
     func convertToTime(seconds: Int) -> String {
         let (mins, secs) = ((seconds % 3600) / 60, (seconds % 3600) % 60)
         return "\(String(format: "%02d", mins)):\(String(format: "%02d", secs))"

@@ -13,7 +13,7 @@
 		F23AB4BD23829B50002990BF /* Hang.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F23AB4BB23829B50002990BF /* Hang.xcdatamodeld */; };
 		F23AB4BF23829B53002990BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F23AB4BE23829B53002990BF /* Assets.xcassets */; };
 		F23AB4C223829B53002990BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F23AB4C023829B53002990BF /* LaunchScreen.storyboard */; };
-		F23AB4CD23829B53002990BF /* HangTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23AB4CC23829B53002990BF /* HangTests.swift */; };
+		F23AB4CD23829B53002990BF /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23AB4CC23829B53002990BF /* Sessions.swift */; };
 		F23AB4D823829B53002990BF /* HangUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23AB4D723829B53002990BF /* HangUITests.swift */; };
 		F23AB4E62382A0BA002990BF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F23AB4E52382A0BA002990BF /* README.md */; };
 		F23AB4E82382A0CB002990BF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F23AB4E72382A0CB002990BF /* .gitignore */; };
@@ -28,6 +28,7 @@
 		F29F335223853D0000B28848 /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29F335123853D0000B28848 /* Sessions.swift */; };
 		F29F33592385596E00B28848 /* SessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29F33572385596E00B28848 /* SessionTableViewCell.swift */; };
 		F29F335A2385596E00B28848 /* SessionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F29F33582385596E00B28848 /* SessionTableViewCell.xib */; };
+		F2B2BDC8239A06AE009AD4BF /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2BDC7239A06AE009AD4BF /* Interval.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +58,7 @@
 		F23AB4C123829B53002990BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F23AB4C323829B53002990BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F23AB4C823829B53002990BF /* HangTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HangTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F23AB4CC23829B53002990BF /* HangTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangTests.swift; sourceTree = "<group>"; };
+		F23AB4CC23829B53002990BF /* Sessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessions.swift; sourceTree = "<group>"; };
 		F23AB4CE23829B53002990BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F23AB4D323829B53002990BF /* HangUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HangUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F23AB4D723829B53002990BF /* HangUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangUITests.swift; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		F29F335123853D0000B28848 /* Sessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessions.swift; sourceTree = "<group>"; };
 		F29F33572385596E00B28848 /* SessionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTableViewCell.swift; sourceTree = "<group>"; };
 		F29F33582385596E00B28848 /* SessionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionTableViewCell.xib; sourceTree = "<group>"; };
+		F2B2BDC7239A06AE009AD4BF /* Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,8 +145,9 @@
 		F23AB4CB23829B53002990BF /* HangTests */ = {
 			isa = PBXGroup;
 			children = (
-				F23AB4CC23829B53002990BF /* HangTests.swift */,
+				F23AB4CC23829B53002990BF /* Sessions.swift */,
 				F23AB4CE23829B53002990BF /* Info.plist */,
+				F2B2BDC7239A06AE009AD4BF /* Interval.swift */,
 			);
 			path = HangTests;
 			sourceTree = "<group>";
@@ -345,7 +348,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F23AB4CD23829B53002990BF /* HangTests.swift in Sources */,
+				F2B2BDC8239A06AE009AD4BF /* Interval.swift in Sources */,
+				F23AB4CD23829B53002990BF /* Sessions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -49,6 +49,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="sessionNameTxtBox"/>
+                                                </userDefinedRuntimeAttributes>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -74,6 +77,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjF-1O-o3R">
                                                         <rect key="frame" x="65" y="0.0" width="46" height="34"/>
                                                         <state key="normal" image="plus" catalog="system"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="addIntervalBtn"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="addInterval:" destination="vlk-gB-Tgh" eventType="touchUpInside" id="Pbb-R4-JZz"/>
                                                         </connections>
@@ -113,11 +119,17 @@
                     <navigationItem key="navigationItem" title="Session" id="oYR-S8-Ib3">
                         <rightBarButtonItems>
                             <barButtonItem title="Done" id="HBp-Xg-tw8">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="doneBtn"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="dismissKeybaord:" destination="vlk-gB-Tgh" id="rZV-7c-eCy"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Edit" image="rectangle.compress.vertical" catalog="system" id="cgk-CP-BsB">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="reorderBtn"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="reOrderIntervalsBtnClick:" destination="vlk-gB-Tgh" id="fss-dp-IIn"/>
                                 </connections>
@@ -172,9 +184,15 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="intervalTimeLbl"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="qBf-LP-ATe">
                                                 <rect key="frame" x="245" y="0.0" width="94" height="32"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="durationStepper"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="stepperClicked:" destination="8Ol-Ec-8zt" eventType="valueChanged" id="iDA-Ut-PHC"/>
                                                 </connections>
@@ -224,6 +242,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eNr-x6-apK">
                                 <rect key="frame" x="0.0" y="140" width="375" height="638"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="sessionsTable"/>
+                                </userDefinedRuntimeAttributes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -237,6 +258,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Hang" id="dVE-9v-ZGo">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ncT-Nm-NgB">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="newSessionBtn"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="newSession:" destination="BYZ-38-t0r" id="uAb-kD-d4N"/>
                             </connections>
@@ -277,6 +301,9 @@
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="actionMessage"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ILr-HG-xbO">
                                                         <rect key="frame" x="0.0" y="40" width="339" height="10"/>
@@ -311,6 +338,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="00:00" id="uAR-li-jjo">
                         <barButtonItem key="rightBarButtonItem" title="Start" id="Hiq-ge-X9l">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="timerControlBtn"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="timerControlBtnClick:" destination="UGZ-P7-Z6q" id="R3j-7c-Fom"/>
                             </connections>

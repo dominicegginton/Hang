@@ -26,15 +26,12 @@ class SessionTableViewCell: UITableViewCell {
             self.totalDurationLabel.text = "\(session.totalDuration)"
         }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-    }
     
     public func configureCell(session: Session) {
         self.nameLabel.text = session.name
         self.totalDurationLabel.text = session.time
+        self.nameLabel.accessibilityIdentifier = "sessionLbl"
+        self.totalDurationLabel.accessibilityIdentifier = "totalDurationLbl"
     }
     
 }

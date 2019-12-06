@@ -84,7 +84,7 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("SessionTableViewCell", owner: self, options: nil)?.first as! SessionTableViewCell
         // Configure the cell...
-        
+         cell.accessibilityIdentifier = "sessionCell/\(indexPath.row)"
         do {
             cell.configureCell(session: try Sessions.instance.getSession(atIndex: indexPath.row))
         } catch {

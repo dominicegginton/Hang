@@ -45,7 +45,7 @@ class HangUITests: XCTestCase {
         }
         app.navigationBars.buttons.element(boundBy: 0).tap()
         XCTAssertTrue(app.tables.element.cells.element(boundBy: 0).exists)
-        XCTAssertTrue(app.navigationBars["Test Session"].exists)
+        XCTAssertTrue(app.navigationBars["Session"].exists)
         app.navigationBars.buttons.element(boundBy: 0).tap()
         XCTAssertTrue(app.navigationBars["Hang"].exists)
         XCTAssertTrue(app.tables.element.cells.element(boundBy: 0).exists)
@@ -81,7 +81,7 @@ class HangUITests: XCTestCase {
         }
         app.navigationBars.buttons.element(boundBy: 0).tap()
         XCTAssertTrue(app.tables.element.cells.element(boundBy: 0).exists)
-        XCTAssertTrue(app.navigationBars["Test Session"].exists)
+        XCTAssertTrue(app.navigationBars["Session"].exists)
         app.tables.element.cells.element(boundBy: 0).swipeLeft()
         app.tables.element.cells.element(boundBy: 0).buttons["Delete"].tap()
         XCTAssertTrue(!app.tables.element.cells.element(boundBy: 0).exists)
@@ -115,7 +115,7 @@ class HangUITests: XCTestCase {
         }
         app.navigationBars.buttons.element(boundBy: 0).tap()
         XCTAssertTrue(app.tables.element.cells.element(boundBy: 0).exists)
-        XCTAssertTrue(app.navigationBars["Test Session"].exists)
+        XCTAssertTrue(app.navigationBars["Session"].exists)
         app.navigationBars.buttons.element(boundBy: 0).tap()
         XCTAssertTrue(app.navigationBars["Hang"].exists)
         XCTAssertTrue(app.tables.element.cells.element(boundBy: 0).exists)
@@ -140,7 +140,7 @@ class HangUITests: XCTestCase {
         }
         app.navigationBars.buttons.element(boundBy: 0).tap()
         XCTAssertTrue(app.tables.element.cells.element(boundBy: 0).exists)
-        XCTAssertTrue(app.navigationBars["Test Session"].exists)
+        XCTAssertTrue(app.navigationBars["Session"].exists)
         app.navigationBars.buttons.element(boundBy: 0).tap()
         XCTAssertTrue(app.navigationBars["Hang"].exists)
         XCTAssertTrue(app.tables.element.cells.element(boundBy: 0).exists)
@@ -167,7 +167,7 @@ class HangUITests: XCTestCase {
         }
         app.navigationBars.buttons.element(boundBy: 0).tap()
         XCTAssertTrue(app.tables.element.cells.element(boundBy: 0).exists)
-        XCTAssertTrue(app.navigationBars["Test Session"].exists)
+        XCTAssertTrue(app.navigationBars["Session"].exists)
         app.navigationBars.buttons.element(boundBy: 0).tap()
         XCTAssertTrue(app.navigationBars["Hang"].exists)
         XCTAssertTrue(app.tables.element.cells.element(boundBy: 0).exists)
@@ -197,7 +197,7 @@ class HangUITests: XCTestCase {
         }
         app.navigationBars.buttons.element(boundBy: 0).tap()
         XCTAssertTrue(app.tables.element.cells.element(boundBy: 0).exists)
-        XCTAssertTrue(app.navigationBars["Test Session"].exists)
+        XCTAssertTrue(app.navigationBars["Session"].exists)
         app.navigationBars.buttons.element(boundBy: 0).tap()
         XCTAssertTrue(app.navigationBars["Hang"].exists)
         XCTAssertTrue(app.tables.element.cells.element(boundBy: 0).exists)

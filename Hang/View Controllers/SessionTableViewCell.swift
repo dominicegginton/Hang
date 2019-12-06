@@ -34,7 +34,7 @@ class SessionTableViewCell: UITableViewCell {
     
     public func configureCell(session: Session) {
         self.nameLabel.text = session.name
-        self.totalDurationLabel.text = "\(session.totalDuration)"
+        self.totalDurationLabel.text = session.time
     }
     
 }

@@ -8,15 +8,25 @@
 
 import Foundation
 
-struct Session {
+class Session: Time {
     var name: String
     var intervals: [Interval]
+    
+    init(name: String, intervals: [Interval]) {
+        self.name = name
+        self.intervals = intervals
+    }
+    
     var totalDuration: Int {
         var duration: Int = 0
         for interval in self.intervals {
             duration += interval.duration
         }
         return duration
+    }
+    
+    public var time: String {
+        return super.convertToTime(seconds: self.totalDuration)
     }
 }
 

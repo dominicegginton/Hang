@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Session: Time {
+class Session: Time, Codable {
     var name: String
     var intervals: [Interval]
     

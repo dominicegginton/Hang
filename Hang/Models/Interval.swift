@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum Action: String, CaseIterable {
+enum Action: String, CaseIterable, Codable {
     case hang = "Hang"
     case rest = "Rest"
     case longRest = "Long Rest"
@@ -26,7 +26,7 @@ enum Action: String, CaseIterable {
     }
 }
 
-class Interval: Time{
+class Interval: Time, Codable{
     var action: Action
     var duration: Int
     

@@ -13,6 +13,11 @@ class HangUITests: XCTestCase {
     override func setUp() {
         continueAfterFailure = false
         XCUIApplication().launch()
+        let app = XCUIApplication()
+        while (app.tables.element.cells.element(boundBy: 0).exists) {
+            app.tables.element.cells.element(boundBy: 0).swipeLeft()
+            app.tables.element.cells.element(boundBy: 0).buttons["Delete"].tap()
+        }
     }
     
     func testAddEmptySession() {
@@ -145,4 +150,76 @@ class HangUITests: XCTestCase {
         sleep(10)
         XCTAssertTrue(!app.tables.element.cells.element(boundBy: 0).exists)
     }
+    
+    func testPauseSessionTimer() {
+        let app = XCUIApplication()
+        app.buttons["newSessionBtn"].tap()
+        XCTAssertTrue(app.navigationBars["Session"].exists)
+        app.textFields["sessionNameTxtBox"].tap()
+        app.textFields["sessionNameTxtBox"].typeText("Test Session")
+        app.buttons["doneBtn"].tap()
+        app.buttons["addIntervalBtn"].tap()
+        XCTAssertTrue(app.tables.element.exists)
+        app.tables.element.cells.element(boundBy: 1).tap()
+        XCTAssertTrue(app.steppers.element.exists)
+        for _ in 0...3 {
+            app.steppers.element.tap()
+        }
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        XCTAssertTrue(app.tables.element.cells.element(boundBy: 0).exists)
+        XCTAssertTrue(app.navigationBars["Test Session"].exists)
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        XCTAssertTrue(app.navigationBars["Hang"].exists)
+        XCTAssertTrue(app.tables.element.cells.element(boundBy: 0).exists)
+        app.tables.element.cells.element(boundBy: 0).tap()
+        XCTAssertTrue(app.navigationBars["00:00"].exists)
+        app.buttons["timerControlBtn"].tap()
+        sleep(6)
+        app.buttons["timerControlBtn"].tap()
+        sleep(2)
+        app.buttons["timerControlBtn"].tap()
+        
+    }
+    
+    func testTimerShare() {
+        let app = XCUIApplication()
+        app.buttons["newSessionBtn"].tap()
+        XCTAssertTrue(app.navigationBars["Session"].exists)
+        app.textFields["sessionNameTxtBox"].tap()
+        app.textFields["sessionNameTxtBox"].typeText("Test Session")
+        app.buttons["doneBtn"].tap()
+        app.buttons["addIntervalBtn"].tap()
+        XCTAssertTrue(app.tables.element.exists)
+        app.tables.element.cells.element(boundBy: 1).tap()
+        XCTAssertTrue(app.steppers.element.exists)
+        for _ in 0...3 {
+            app.steppers.element.tap()
+        }
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        XCTAssertTrue(app.tables.element.cells.element(boundBy: 0).exists)
+        XCTAssertTrue(app.navigationBars["Test Session"].exists)
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        XCTAssertTrue(app.navigationBars["Hang"].exists)
+        XCTAssertTrue(app.tables.element.cells.element(boundBy: 0).exists)
+        app.tables.element.cells.element(boundBy: 0).tap()
+        XCTAssertTrue(app.navigationBars["00:00"].exists)
+        app.buttons["shareBtn"].tap()
+    }
+    
+    func testInfoLink() {
+        let app = XCUIApplication()
+        app.buttons["settingsBtn"].tap()
+        XCTAssertTrue(app.navigationBars["Settings"].exists)
+        app.buttons["infoBtn"].tap()
+    }
+    
+    func testEmail() {
+        let app = XCUIApplication()
+        app.buttons["settingsBtn"].tap()
+        XCTAssertTrue(app.navigationBars["Settings"].exists)
+        app.buttons["emailBtn"].tap()
+    }
+    
+    
+
 }
